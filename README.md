@@ -40,7 +40,11 @@ El número de españoles que hace turismo o se desplaza por ocio dentro de Espa�
 
 Nuestro KPI es tener usuarios que se registren y usen nuestra aplicación.
 
-Nuestro OKR estimamos que la usen en torno a 1 millón anualmente.
+Nuestro OKR estimamos que la usen en torno a 1 millón de usuarios anualmente.
+
+Nuestro KPI es tener usuarios que se registren en nuestra aplicación.
+
+Nuestro OKR estimamos que la usen en torno a 40% de las visitas anualmente.
 
 ## Canvas
 
