@@ -38,9 +38,9 @@ El número de españoles que hace turismo o se desplaza por ocio dentro de Espa�
 
 ## KPI & OKR
 
-Nuestro KPI es conseguir que un número elevado de usuarios usen nuestra aplicación.
+Nuestro KPI es tener usuarios que se registren y usen nuestra aplicación.
 
-Nuestro OKR estimamos que la usen en torno a 1 millón.
+Nuestro OKR estimamos que la usen en torno a 1 millón anualmente.
 
 ## Canvas
 
@@ -86,7 +86,7 @@ Nuestro OKR estimamos que la usen en torno a 1 millón.
 *	Infraestructura de servidores: la aplicación web necesitará un servidor para alojar la aplicación. Los costos pueden variar según el proveedor de alojamiento, pero pueden oscilar entre $ 50 y $ 500 por mes.
 *	Costos de dominio y SSL: para tener un dominio personalizado y un certificado SSL seguro, se deben pagar costos anuales. Los costos pueden oscilar entre $ 10 y $ 100 por año, dependiendo del proveedor y del tipo de certificado.
 *	Integración de API: para comparar precios y disponibilidad de viajes, la aplicación web necesitará integrar varias APIs. Dependiendo del proveedor de la API y la cantidad de integraciones necesarias, los costes pueden oscilar entre $ 100 y $ 5000 o más al mes.
-*	Personal: los costos de personal dependerán de la cantidad de empleados necesarios para desarrollar y mantener la aplicación. Esto incluye desarrolladores, diseñadores, gerentes de proyectos, etc. Somos tres integrantes y hemos estimado que el sueldo va a ser igual para todos y rondando los 1000/1500 euros al mes. 
+*	Personal: los costos de personal dependerán de la cantidad de empleados necesarios para desarrollar y mantener la aplicación. Esto incluye desarrolladores, diseñadores, gerentes de proyectos, etc. Somos tres integrantes y hemos estimado que el sueldo va a ser igual para todos y rondando los 1000/1500 euros brutos al mes. 
 *	Marketing y publicidad: una vez que la aplicación esté lista para su lanzamiento, es posible que se necesite una inversión en marketing y publicidad para atraer usuarios a la aplicación. Los costos pueden variar según el tipo de campaña publicitaria que se utilice. Estimamos que los costes anuales rondaran los 5.000 euros. 
 
 ### Flujos de ingresos
