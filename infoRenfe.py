@@ -35,10 +35,9 @@ WebDriverWait(driver, 5)\
     .until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'div.mdc-button__touch.sc-rf-button')))\
     .click() 
 
-
-
-
-
+wait = WebDriverWait(driver, 10)
+tabla = wait.until(EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/section[2]/div/section[1]/div[3]/div[1]/table/tbody[1]/tr[1]")))
+print(tabla.text)
 
 
 
