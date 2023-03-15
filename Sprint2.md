@@ -50,3 +50,9 @@ Además, tendremos que integrar los datos de Renfe, Blablacar e Interbus que son
 Como ayuda, estamos planteándonos añadir una tabla de datos de proveedores en la que incluyamos el nombre del proveedor, el sitio web del proveedor y la API del proveedor. 
 
 Adicionalmente, a lo largo del desarrollo de la empresa podríamos incluir integración de más proveedores a parte de los tres mencionados, funcionalidades de filtrado y ordenamiento de resultados para hacer más personalizada la experiencia de usuario e integración de sistemas de pago, para que el usuario pueda comprar los boletos a través de la plataforma, en vez de dirigir a la página del proveedor. Aunque en la etapa y desarrollo inicial de nuestro proyecto solo incluiremos lo mencionado al principio. Estas serán integraciones y funcionalidades que nos replantearemos de cara al futuro con el correcto desarrollo y despliegue de nuestra plataforma web. 
+
+
+## Mockup de GUI y user experience
+
+![imagen](https://user-images.githubusercontent.com/91555863/225386741-e1846e91-cc5b-465e-8629-beaef7ac5b29.png)
+
