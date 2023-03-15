@@ -1,6 +1,6 @@
-#SPRINT 2
+# SPRINT 2
 
-##Tecnologías a usar
+## Tecnologías a usar
 
 > -	Lenguajes de programación: la aplicación utiliza el lenguaje de programación Python y para obtener información usa lenguaje web, en concreto HTML, para el desarrollo   de la interfaz y la lógica de la aplicación.
 
