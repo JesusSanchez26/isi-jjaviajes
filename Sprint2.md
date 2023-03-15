@@ -1,18 +1,5 @@
 # SPRINT 2
 
-## Tecnologías a usar
-
-> -	**Lenguajes de programación:** la aplicación utiliza el lenguaje de programación Python y para obtener información usa lenguaje web, en concreto HTML, para el desarrollo   de la interfaz y la lógica de la aplicación.
-
-> -	**Frameworks y librerías:** la aplicación utiliza algún framework o librería de desarrollo web, como Pandas, para agilizar el proceso de desarrollo y mejorar la calidad   del código. También se usa Selenium, que es un entorno de pruebas de software y se utiliza para el web scraping.
-
-> -	**APIs:** la aplicación utiliza las APIs públicas proporcionadas BlaBlaCar para obtener la información de los viajes y mostrarlos en la aplicación. Y además para obtener   información utilizamos web scraping de las páginas de Renfe y Interbús.
-
-> -	**Bases de datos:** la aplicación usaría una base de datos, ya sea MySQL, ORACLE u otra, para almacenar la información de los usuarios y viajes correctamente, y permitir   búsquedas.
-
-> -	**Herramientas de control de versiones:** Para gestionar el código fuente de la aplicación y colaborar en su desarrollo, se utiliza una herramienta de control de           versiones, la cual es GitHub.
-
-
 ## Contrato Mercantil
 
 > -	**Objeto del contrato:** en este apartado se incluye el servicio que se va a prestar. En nuestro caso es una plataforma web que va a prestar servicio a un grupo de usuarios que buscan rutas de transporte desde un origen hasta un destino en una fecha determinada para que puedan elegir la ruta más óptima para ellos. La aplicación utilizará las páginas de Renfe, Blabacar e Interbus para listar estos viajes. 
@@ -31,6 +18,24 @@ La empresa tampoco se hará cargo de ningún daño indirecto, incidental, especi
 > -	**Precio y condiciones de pago:** como se mencionó en el Sprint 1 las formas de pago de nuestra aplicación son cuotas mensuales y anuales, con descuento a determinados tipos de clientes. Con respecto a las empresas de transporte que mostramos de nuestra plataforma no tienen que abonarnos nada. La prestación se abonará por adelantado y será no reembolsable. Hay diferentes métodos de pago y se considerará efectivo cuando se reciban en la cuenta bancaria designada por la empresa JJAViajes. 
 
 > -	**Resolución de conflictos:** Cualquier conflicto que surja en relación con el presente contrato será resuelto mediante mediación o, en su defecto, mediante arbitraje de conformidad con las leyes vigentes en España. Si no se llega a un acuerdo por medio de la mediación o el arbitraje, se someterá la resolución de la controversia a los tribunales competentes en Ciudad Real.
+
+
+## Arquitectura global detallada
+
+![imagen](https://user-images.githubusercontent.com/91555863/225390632-5551742b-5de4-4479-ab4b-57d2762dd424.png)
+
+
+## Tecnologías a usar
+
+> -	**Lenguajes de programación:** la aplicación utiliza el lenguaje de programación Python y para obtener información usa lenguaje web, en concreto HTML, para el desarrollo   de la interfaz y la lógica de la aplicación.
+
+> -	**Frameworks y librerías:** la aplicación utiliza algún framework o librería de desarrollo web, como Pandas, para agilizar el proceso de desarrollo y mejorar la calidad   del código. También se usa Selenium, que es un entorno de pruebas de software y se utiliza para el web scraping.
+
+> -	**APIs:** la aplicación utiliza las APIs públicas proporcionadas BlaBlaCar para obtener la información de los viajes y mostrarlos en la aplicación. Y además para obtener   información utilizamos web scraping de las páginas de Renfe y Interbús.
+
+> -	**Bases de datos:** la aplicación usaría una base de datos, ya sea MySQL, ORACLE u otra, para almacenar la información de los usuarios y viajes correctamente, y permitir   búsquedas.
+
+> -	**Herramientas de control de versiones:** Para gestionar el código fuente de la aplicación y colaborar en su desarrollo, se utiliza una herramienta de control de           versiones, la cual es GitHub.
 
 
 ## Interfaces y estructuras de datos 
