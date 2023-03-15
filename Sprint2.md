@@ -43,7 +43,10 @@ Como interfaz vamos a tener una interfaz de usuario (UI) que será la parte visi
 > - Botón de búsqueda: es un botón en el que el usuario debe de hacer click para buscar las rutas de transporte en relación con los campos de entrada mencionados. 
 > - Lista de resultados: es una lista de resultados donde se muestran las rutas de transporte disponibles que coinciden con los criterios seleccionados e introducidos de búsqueda del usuario. 
 
-Con respecto a la estructura de datos de nuestra plataforma, tendremos una tabla de rutas que almacenará los datos de las rutas disponibles que se pueden mostrar a los usuarios. Dentro de la tabla, los campos que incluiremos será origen, destino, fecha, precio, aplicación de transporte, hora de salida y hora de llegada. 
+Con respecto a la estructura de datos de nuestra plataforma, tendremos una tabla de rutas que almacenará los datos de las rutas disponibles que se pueden mostrar a los usuarios. Dentro de la tabla, los campos que incluiremos será origen, destino, fecha, precio, aplicación de transporte, hora de salida y hora de llegada.
+
 Además, tendremos que integrar los datos de Renfe, Blablacar e Interbus que son las aplicaciones de las cuales mostraremos rutas. Considerando la estructura de datos como un tabla de datos de rutas del proveedor, una para cada aplicación, donde se almacene la información de las rutas disponibles incluyendo los mismos campos que la estructura de datos anterior. 
+
 Como ayuda, estamos planteándonos añadir una tabla de datos de proveedores en la que incluyamos el nombre del proveedor, el sitio web del proveedor y la API del proveedor. 
+
 Adicionalmente, a lo largo del desarrollo de la empresa podríamos incluir integración de más proveedores a parte de los tres mencionados, funcionalidades de filtrado y ordenamiento de resultados para hacer más personalizada la experiencia de usuario e integración de sistemas de pago, para que el usuario pueda comprar los boletos a través de la plataforma, en vez de dirigir a la página del proveedor. Aunque en la etapa y desarrollo inicial de nuestro proyecto solo incluiremos lo mencionado al principio. Estas serán integraciones y funcionalidades que nos replantearemos de cara al futuro con el correcto desarrollo y despliegue de nuestra plataforma web. 
