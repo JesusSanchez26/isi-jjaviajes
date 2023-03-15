@@ -56,3 +56,22 @@ Adicionalmente, a lo largo del desarrollo de la empresa podríamos incluir integ
 
 ![imagen](https://user-images.githubusercontent.com/91555863/225386741-e1846e91-cc5b-465e-8629-beaef7ac5b29.png)
 
+# User Experience
+
+Con respecto a nuestra Experiencia de Usuario (UI) en nuestra plataforma web de rutas de transporte, haremos una Interfaz enfocado a un diseño claro, fácil de usar y con una apariencia atractiva. Tendremos en cuenta las siguientes consideraciones:
+
+> - Diseño limpio y minimalista: la UI tiene que ser limpia y minimalista como lo hemos reflejado en nuestro Mockup GUI para que el usuario la pueda entender y usar fácilmente. La navegación tiene que ser sencilla y sin muchos elementos que distraigan.
+
+> - Diseño intuitivo: los usuarios tiene que saber intuitivamente como se usa la plataforma sin la necesidad de añadir instrucciones complejas. Por lo que a la hora de definir los campos donde se introduce información y los botones tendrán que estar claramente etiquetados y organizados. Y todo de forma lógica. 
+ 
+> - La navegación tiene que ser clara y sencilla para que los usuarios puedan ver la información que buscan fácilmente y que naveguen en las diferentes secciones de la plataforma de manera fluida. 
+
+> - Al ser una plataforma web únicamente, que todavía no vamos a incluir el acceso mediante tablets y smartphones a través de una aplicación, ni una aplicación de escritorio. De momento, no es necesario hacer un diseño responsive, ya que no va a tener que adaptarse a diferentes tamaños de pantalla o dispositivos. 
+
+> - Haremos un buen uso del color y la tipografía para que el usuario se sienta cómodo con nuestra interfaz, sea más atractiva y fácil de leer. Las topografías que elegiremos serán legibles y los colores atractivos y fáciles de distinguir. 
+
+> - Haremos un uso adecuado de los botones y llamados a la acción que serán claros y atractivos, para que el usuario vea de forma clara e intuitiva las acciones que pueden realizar en la plataforma. 
+
+Lo óptimo es que se hagan pruebas de usabilidad y retroalimentación de los usuarios en el proceso de diseño. 
+
+
