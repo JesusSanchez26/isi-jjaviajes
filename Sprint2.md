@@ -56,7 +56,7 @@ Adicionalmente, a lo largo del desarrollo de la empresa podríamos incluir integ
 
 ![imagen](https://user-images.githubusercontent.com/91555863/225386741-e1846e91-cc5b-465e-8629-beaef7ac5b29.png)
 
-# User Experience
+### User Experience
 
 Con respecto a nuestra Experiencia de Usuario (UI) en nuestra plataforma web de rutas de transporte, haremos una Interfaz enfocado a un diseño claro, fácil de usar y con una apariencia atractiva. Tendremos en cuenta las siguientes consideraciones:
 
