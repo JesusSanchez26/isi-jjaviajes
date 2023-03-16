@@ -87,6 +87,12 @@ Adicionalmente, a lo largo del desarrollo de la empresa podríamos incluir integ
 
 ![image](https://user-images.githubusercontent.com/91602556/225570440-11bb355b-5f0b-4a9c-a399-dd33c83c8fd4.png)
 
+* *Será redirigido a una nueva página donde se le mostraran los distintos viajes disponibles.*
+* Seleccionar el viaje que más le convenga de la lista.
+
+![image](https://user-images.githubusercontent.com/91602556/225571276-d23347f7-b327-4108-b02f-79c8f4e4e8bc.png)
+
+
 
 
 Con respecto a nuestra Experiencia de Usuario (UI) en nuestra plataforma web de rutas de transporte, haremos una Interfaz enfocado a un diseño claro, fácil de usar y con una apariencia atractiva. Tendremos en cuenta las siguientes consideraciones:
