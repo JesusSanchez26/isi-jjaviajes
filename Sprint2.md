@@ -2,6 +2,17 @@
 
 ## Contrato Mercantil
 
+### Checklist de Requisitos
+
+- [ ] Conectarse con la API de Blablacar/Uber
+- [ ] Obtener la información de Renfe
+- [ ] Obtener la información de Interbus
+- [ ] Combinarlos y almacenarlos en la Base de Datos
+- [ ] Poder hacer consultas a la base de datos
+- [ ] Poder seleccionar un origen, destino y fecha y genere un resultado
+- [ ] Listar una serie de rutas en base a una información introducida
+- [ ] Redirigir a las páginas que ofrecen la ruta de transporte seleccionada
+
 > -	**Objeto del contrato:** en este apartado se incluye el servicio que se va a prestar. En nuestro caso es una plataforma web que va a prestar servicio a un grupo de usuarios que buscan rutas de transporte desde un origen hasta un destino en una fecha determinada para que puedan elegir la ruta más óptima para ellos. La aplicación utilizará las páginas de Renfe, Blabacar e Interbus para listar estos viajes. 
 
 > -	**Identificación de las partes:** dentro de nuestra empresa va a tres partes involucradas. Los usuarios que son los que usan nuestra plataforma web, las empresas de las cuales obtenemos la información para mostrarle a los usuarios y nuestra empresa que tiene la responsabilidad de dar el servicio de información de rutas a los clientes. 
