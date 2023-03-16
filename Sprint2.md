@@ -22,7 +22,7 @@ La empresa tampoco se hará cargo de ningún daño indirecto, incidental, especi
 
 ## Arquitectura global detallada
 
-![imagen](https://user-images.githubusercontent.com/91555863/225390632-5551742b-5de4-4479-ab4b-57d2762dd424.png)
+![imagen](https://user-images.githubusercontent.com/91555863/225555252-dc7752fa-699d-45b5-b6c6-0b6668a12bd6.png)
 
 
 ## Tecnologías a usar
