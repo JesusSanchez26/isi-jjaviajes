@@ -81,7 +81,8 @@ Adicionalmente, a lo largo del desarrollo de la empresa podríamos incluir integ
 * Introducir campos origen y destino del viaje
 
 
-![imagen](https://user-images.githubusercontent.com/91555863/225564475-ee5c60bc-189e-4ff2-895f-0ed0e05d185e.png)
+![imagen](https://user-images.githubusercontent.com/91555863/225564475-ee5c60bc-189e-4ff2-895f-0ed0e05d185e.png) ![image](https://user-images.githubusercontent.com/91602556/225570440-11bb355b-5f0b-4a9c-a399-dd33c83c8fd4.png)
+
 
 
 
