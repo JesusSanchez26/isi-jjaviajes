@@ -71,8 +71,20 @@ Adicionalmente, a lo largo del desarrollo de la empresa podríamos incluir integ
 ## Mockup de GUI y user experience
 
 ![imagen](https://user-images.githubusercontent.com/91555863/225386741-e1846e91-cc5b-465e-8629-beaef7ac5b29.png)
+![imagen](https://user-images.githubusercontent.com/91555863/225565575-35a73bb3-7589-4c60-8c11-83687fb99611.png)
+
 
 ### User Experience
+
+#### Guia usuario
+
+* Introducir campos origen y destino del viaje
+
+
+![imagen](https://user-images.githubusercontent.com/91555863/225564475-ee5c60bc-189e-4ff2-895f-0ed0e05d185e.png)
+
+
+
 
 Con respecto a nuestra Experiencia de Usuario (UI) en nuestra plataforma web de rutas de transporte, haremos una Interfaz enfocado a un diseño claro, fácil de usar y con una apariencia atractiva. Tendremos en cuenta las siguientes consideraciones:
 
