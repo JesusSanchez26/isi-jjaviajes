@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+  <title>JJA VIAJES</title>
+
+	<style>
+		header {
+			text-align: center;
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			margin: 0;
+		}
+		h1 {
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+	<header>
+    <h1 align="center" width="140" height="140" color="black"> JJA VIAJES </h1>
+	</header>
+	<style>
+		body {
+			background-image: url('https://www.xtrafondos.com/wallpapers/bosque-cubierto-en-niebla-11641.jpg');
+      background-size: cover;
+		}
+	</style>
+  <p><img src="https://img.freepik.com/vector-gratis/logotipo-viaje-detallado_23-2148616611.jpg?w=2000" alt="Logo" border="0" width="160" heigth="170"></p>
+
+<body>
+      <section class="banner">
+        <h1>"DESCUBRE NUEVOS DESTINOS Y HAZ TUS VIAJES"</h1>
+        <br>
+        <p><h3>ENCUENTRA LOS MEJORES PRECIOS Y LAS MEJORES FORMAS DE VIAJAR</h3></p>
+        <br>
+        <br>
+        <form>
+          <label for="origen" style="font-size: 36px; background-color: rgb(85, 85, 85); color: white;">ORIGEN:</label>
+          <input type="text" id="origen" name="origen" style="font-size: 36px; background-color: lightgray;">
+          <label for="destino" style="font-size: 36px; background-color: rgb(85, 85, 85); color: white; ">DESTINO:</label>
+          <input type="text" id="destino" name="destino" style="font-size: 36px; background-color: lightgray;">
+          <label for="fecha" style="font-size: 36px; background-color: rgb(85, 85, 85); color: white; ">FECHA:</label>
+          <input type="date" id="fecha" name="fecha" style="font-size: 36px; background-color: lightgray;">
+        <br>
+        <br>
+          <input type="submit" value="Buscar" style="font-size: 60px; background-color: rgb(124, 124, 124); color: white;">
+          <button type="button" onclick="buscarViajes()" style="font-size: 60px; background-color: green; color: white;">Buscar</button>
+        </form>
+
+        </form>
+      </section>
+    <div id="resultados"></div>
+
+    <script>
+        function buscarViajes() {
+            // Obtener los valores de los campos de entrada
+            var origen = document.getElementById("origen").value;
+            var destino = document.getElementById("destino").value;
+            var fecha = document.getElementById("fecha").value;
+
+            // Realizar la búsqueda de viajes con los valores obtenidos
+            // Aquí deberías utilizar alguna API o realizar la búsqueda de otra forma
+            // En este ejemplo, simplemente se muestran los valores en la página
+            var resultados = "Origen: " + origen + "<br>";
+            resultados += "Destino: " + destino + "<br>";
+            resultados += "Fecha: " + fecha + "<br>";
+            resultados += "Viajes encontrados: <br>";
+            resultados += "- Renfe: Madrid - Barcelona, 10:00 - 14:00<br>";
+            resultados += "- Interbus: Madrid - Barcelona, 11:00 - 15:00<br>";
+
+            // Mostrar los resultados en la página
+            document.getElementById("resultados").innerHTML = resultados;
+        }
+    </script>
+</body>
+</html>
