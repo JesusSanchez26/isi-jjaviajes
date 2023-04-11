@@ -4,49 +4,37 @@
 <head>
   <title>JJA VIAJES</title>
 
-	<style>
-		header {
-			text-align: center;
-			background-color: #333;
-			color: #fff;
-			padding: 20px;
-			margin: 0;
-		}
-		h1 {
-			margin: 0;
-		}
-	</style>
 </head>
 <body>
-	<header>
-    <h1 align="center" width="140" height="140" color="black"> JJA VIAJES </h1>
-	</header>
+  <header style="display: flex; align-items: center; justify-content: space-between;">
+    <img src="https://img.freepik.com/vector-gratis/logotipo-viaje-detallado_23-2148616611.jpg?w=2000" alt="Logo" style="height: 120px; width: 110px; margin-right: 20px;">
+    <h1 style="font-size: 32px; text-align: center;flex-grow: 1; background-color: #333; color: #fff; padding: 20px; margin: 0;">JJA VIAJES</h1>
+  </header>
 	<style>
 		body {
-			background-image: url('https://www.xtrafondos.com/wallpapers/bosque-cubierto-en-niebla-11641.jpg');
+			background-image: url('https://cdn.pixabay.com/photo/2018/08/19/10/16/nature-3616194_1280.jpg');
       background-size: cover;
 		}
 	</style>
-  <p><img src="https://img.freepik.com/vector-gratis/logotipo-viaje-detallado_23-2148616611.jpg?w=2000" alt="Logo" border="0" width="160" heigth="170"></p>
 
 <body>
       <section class="banner">
-        <h1>"DESCUBRE NUEVOS DESTINOS Y HAZ TUS VIAJES"</h1>
-        <br>
-        <p><h3>ENCUENTRA LOS MEJORES PRECIOS Y LAS MEJORES FORMAS DE VIAJAR</h3></p>
+        <h1 style="text-align: center;">"DESCUBRE NUEVOS DESTINOS Y HAZ TUS VIAJES"</h1>
+        <h3 style="text-align: center;">Encuentra los mejores precios y las mejores formas de viajar.</h3>
         <br>
         <br>
         <form>
-          <label for="origen" style="font-size: 36px; background-color: rgb(85, 85, 85); color: white;">ORIGEN:</label>
-          <input type="text" id="origen" name="origen" style="font-size: 36px; background-color: lightgray;">
-          <label for="destino" style="font-size: 36px; background-color: rgb(85, 85, 85); color: white; ">DESTINO:</label>
-          <input type="text" id="destino" name="destino" style="font-size: 36px; background-color: lightgray;">
-          <label for="fecha" style="font-size: 36px; background-color: rgb(85, 85, 85); color: white; ">FECHA:</label>
-          <input type="date" id="fecha" name="fecha" style="font-size: 36px; background-color: lightgray;">
+          <label for="origen" style="margin-left: 40px;font-size: 30px; background-color: rgb(85, 85, 85); color: white;">ORIGEN:</label>
+          <input type="text" id="origen" name="origen" style="font-size: 30px; background-color: lightgray;">
+          <label for="destino" style="margin-left: 40px;font-size: 30px; background-color: rgb(85, 85, 85); color: white; ">DESTINO:</label>
+          <input type="text" id="destino" name="destino" style="font-size: 30px; background-color: lightgray;">
+          <br>
+          <label for="fecha" style="margin-left: 40px;font-size: 30px; background-color: rgb(85, 85, 85); color: white; ">FECHA:</label>
+          <input type="date" id="fecha" name="fecha" style="margin-top: 30px;font-size: 30px; background-color: lightgray;">
         <br>
         <br>
-          <input type="submit" value="Buscar" style="font-size: 60px; background-color: rgb(124, 124, 124); color: white;">
-          <button type="button" onclick="buscarViajes()" style="font-size: 60px; background-color: green; color: white;">Buscar</button>
+          <input type="submit" value="Buscar" style="font-size: 50px; background-color: rgb(9, 153, 115); color: white;float: right;margin-right: 120px;">
+          <!-- <button type="button" onclick="buscarViajes()" style="font-size: 40px; background-color: green; color: white;">Buscar</button> -->
         </form>
 
         </form>
@@ -76,3 +64,31 @@
     </script>
 </body>
 </html>
+<!-- <p>async function buscarViajes() {
+  const origen = document.getElementById("origen").value;
+  const destino = document.getElementById("destino").value;
+  const fecha = document.getElementById("fecha").value;
+
+  // Hacer llamada a la API para obtener los viajes
+  const url = https://api.miviaje.com/viajes?origen=${origen}&destino=${destino}&fecha=${fecha};
+  const response = await fetch(url);
+  const data = await response.json();
+
+  // Mostrar los resultados en la tabla
+  const tablaViajes = document.getElementById("tabla-viajes");
+  const tbody = tablaViajes.querySelector("tbody");
+  tbody.innerHTML = "";
+
+  data.forEach((viaje) => {
+    const row = document.createElement("tr");
+    row.innerHTML = 
+      <td>${viaje.origen}</td>
+      <td>${viaje.destino}</td>
+      <td>${viaje.horaSalida}</td>
+      <td>${viaje.horaLlegada}</td>
+      <td>${viaje.precio}</td>
+    ;
+    tbody.appendChild(row);
+  });
+</p>
+} -->
