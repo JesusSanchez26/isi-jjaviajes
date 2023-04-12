@@ -1,4 +1,6 @@
+import json
 import mysql.connector
+from ryanair import datos_api
 
 conexion =  mysql.connector.connect(user= 'AÑADIR USUARIO', 
                                     password='AÑADIR CONTRASEÑA', 
@@ -16,14 +18,24 @@ cursor.execute(sql)
 conexion.close()
 """
 
-# Prueba de inserción de datos
+# Inserción de datos
 
 mycursor = conexion.cursor()
-valores = ("valor1", "valor2", "valor3", "valor4", "valor5")
 sql = "INSERT INTO vuelo (columna1, columna2, columna3, columna4, columna5) VALUES (%s, %s, %s, %s, %s)"
-mycursor.execute(sql, valores)
-conexion.commit()
 
+api_data = datos_api.vuelos()
+final_data = json.loads(api_data)
 
-print(mycursor.rowcount, "fila insertada.")
+for trip in final_data.values():
+    for flight in trip:
+        origin_code = flight[0]['origin_code']
+        destination_code = flight[0]['destination_code']
+        regular_fare = flight[0]['regular_fare']
+        departure_datetime_utc = flight[0]['departure_datetime_utc']
+        duration_hours = flight[0]['duration_hours']
+        valores = (origin_code, destination_code, regular_fare, departure_datetime_utc, duration_hours)
+        mycursor.execute(sql, valores)
+        conexion.commit()
+        print(mycursor.rowcount, "fila insertada.")
+
 print(conexion)
