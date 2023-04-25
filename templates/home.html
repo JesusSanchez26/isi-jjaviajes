@@ -67,18 +67,6 @@
             <br>
             <br>
             <form>
-                <!-- <label for="origen" style="margin-left: 40px;font-size: 30px; background-color: rgb(85, 85, 85); color: white;">ORIGEN:</label>
-                <input type="text" id="origen" name="origen" style="font-size: 30px; background-color: lightgray;">
-                <label for="destino" style="margin-left: 40px;font-size: 30px; background-color: rgb(85, 85, 85); color: white; ">DESTINO:</label>
-                <input type="text" id="destino" name="destino" style="font-size: 30px; background-color: lightgray;">
-                <br>
-                <label for="fecha" style="margin-left: 40px;font-size: 30px; background-color: rgb(85, 85, 85); color: white; ">FECHA:</label>
-                <input type="date" id="fecha" name="fecha" style="margin-top: 30px;font-size: 30px; background-color: lightgray;">
-                <br>
-                <br>
-                <button type="button" onclick="buscarViajes()" style="font-size: 50px; background-color: rgb(9, 153, 115); color: white;float: right;margin-right: 120px;">Buscar</button> -->
-
-
                 <div style=" margin: 0 auto;">
                     <label for="origen" style="margin-left: 40px;font-size: 30px; background-color: rgb(85, 85, 85); color: white;">ORIGEN:</label>
                     <select style="width: 134px; margin-left: 10px; font-size: 30px;" id="mi-selector1"></select>
@@ -100,13 +88,15 @@
 
         <script>
             const token = 'e233a2be10msh8840ddf18877db9p19b37fjsnadbb89126e34';
-            let originReq = '';
+            const token2 = '78c2f0279fmshaafe4fd8acccad7p14926cjsn5abd027f34b4';
             let destinationReq = '';
             let dateReq = '';
-
+            let origin = '';
             let miSelector1 = document.getElementById("mi-selector1");
             let miSelector2 = document.getElementById("mi-selector2");
             let date = document.getElementById("fecha");
+
+            let airports = [];
 
             // Agregar un evento change al elemento select
             miSelector1.addEventListener("change", function() {
@@ -127,7 +117,7 @@
                 dateReq = date.value;
             });
 
-            function getAirports() {
+            async function getAirports() {
                 const petitionAirports = {
                     method: 'GET',
                     headers: {
@@ -140,8 +130,10 @@
                     .then(response => response.json())
                     .then(response => {
                         console.log('aeropuertos ', response)
+                        airports.push(response);
                         let opciones = [];
                         for (var i = 0; i < response.length; i++) {
+
                             // Crear un nuevo elemento option
                             var option = document.createElement("option");
 
@@ -170,10 +162,9 @@
                     })
                     .catch(err => console.error(err));
 
-
             }
 
-            function buscarViajes() {
+            async function buscarViajes() {
                 const table = document.createElement('table');
                 // crea la primera fila para las cabeceras
                 const headerRow = table.insertRow();
@@ -184,7 +175,6 @@
                     header.appendChild(textNode);
                     headerRow.appendChild(header);
                 });
-
 
                 const options = {
                     method: 'GET',
@@ -201,7 +191,7 @@
                         response.destination_to_origin_trip.forEach(flightArray => {
                             const flight = flightArray[0];
                             const row = table.insertRow();
-                            const values = [flight.origin_code, flight.destination_code, flight.flight_number, flight.regular_fare, flight.currency, flight.regular_fares_left, flight.departure_datetime_utc, flight.arrival_datetime_utc, flight.duration_hours];
+                            const values = [flight.destination_code, flight.origin_code, flight.flight_number, flight.regular_fare, flight.currency, flight.regular_fares_left, flight.departure_datetime_utc, flight.arrival_datetime_utc, flight.duration_hours + ' h'];
                             values.forEach(value => {
                                 const cell = document.createElement('td');
                                 const textNode = document.createTextNode(value);
@@ -211,6 +201,36 @@
                         });
                     })
                     .catch(err => console.error(err));
+
+                const url2 = `https://skyscanner44.p.rapidapi.com/search?adults=1&origin=${origin}&destination=${destinationReq}&departureDate=${dateReq}&currency=EUR`;
+                const options2 = {
+                    method: 'GET',
+                    headers: {
+                        'content-type': 'application/octet-stream',
+                        'X-RapidAPI-Key': '78c2f0279fmshaafe4fd8acccad7p14926cjsn5abd027f34b4',
+                        'X-RapidAPI-Host': 'skyscanner44.p.rapidapi.com'
+                    }
+                };
+
+                try {
+                    const response = await fetch(url2, options2);
+                    const result = await response.text();
+                    const flights = JSON.parse(result);
+                    flights.itineraries.buckets.forEach(element => {
+                        element.items.forEach(flight => {
+                            const row = table.insertRow();
+                            const values = [flight.legs[0].origin.id, flight.legs[0].destination.id, 'FR ' + flight.legs[0].segments[0].flightNumber, flight.price.raw, 'EUR', '2', flight.legs[0].segments[0].departure, flight.legs[0].segments[0].arrival, flight.legs[0].segments[0].durationInMinutes + ' m'];
+                            values.forEach(value => {
+                                const cell = document.createElement('td');
+                                const textNode = document.createTextNode(value);
+                                cell.appendChild(textNode);
+                                row.appendChild(cell);
+                            });
+                        });
+                    });
+                } catch (error) {
+                    console.error('Error segunda busqueda --> ', error);
+                }
 
                 // añade la tabla al DOM
                 const tableContainer = document.getElementById('table-container');
