@@ -10,13 +10,18 @@
 
 ## Documentación final
 
-Con respecto a la documentación final, hemos ampliado la documentación de usuario realizada en el Sprint 3 junto a la documentación necesaria para cargar la imágen del Docker que sirve para el control.
+Con respecto al Sprint 3, hemos tenido que rediseñar el enfoque de nuestra empresa por problemas con las APIS. Al hacer web scraping y obtener la información de las páginas de Renfe e Interbus, nos hemos dado cuenta de que cualquier cambio que hicieran en la página web respectiva, hacía que nuestra Base de Datos se quedará inutilizable. 
+Por ello, hemos buscado una alternativa sobre nuestra aplicación web de viajes, cambiado las API’s e implementado otra alternativa efectiva, que es mostrar posibles viajes mediante la información de vuelos del api de Ryanair y del api de Skyscanner. 
+Este cambio nos ha afectado tanto en diseño como en código. Por lo que nuestra aplicación sigue la misma temática, pero con variación en cuanto al tipo de información mostrada. 
+Las nuevas API’s seleccionadas, dejando a un lado web scraping, han sido Ryanair y la otra Skyscanner, como hemos comentado anteriormente. La segunda no estaba implementada para el sprint 3, pero ahora para el sprint final se encuentra todo implementado correctamente.
+A parte de esto, al usar las 2 API’s desde una misma página, esta deja un máximo de peticiones por cuenta al día, por lo que el token solo se puede usar 20 veces en un mismo día. Por lo que no habría mucho inconveniente, pero si hubiese problemas solo habría que cambiar el token del programa por otro de otra cuenta.
+
 
 ### Documentación de usuario
 
 Nuestra empresa está implementada de tal forma que el usuario sea capaz de visualizarla como una aplicación web. 
 En cuanto al diseño del código, hemos implementado una carpeta denominada “templates” que contiene el código HTML que carga la página web para ser visualizada. Ese mismo código contiene su respectivo diseño para tener una apariencia más cómoda y visual para el usuario. 
-El código para utilizar la API de Ryanair y su respectiva base de datos no es perceptible ni usable por parte del usuario. 
+El código para utilizar las APIs de Ryanair y SkyScanner y su respectiva base de datos no es perceptible ni usable por parte del usuario. 
 Por otro lado, el código denominado “index.py” si que es necesario para que el usuario tenga acceso a la hora de carga la página web, ya que es su función. 
 Por lo que, para poder usar la aplicación, se tienen que seguir los siguientes pasos: 
 1.	Descargarse el código “index.py” que da acceso a la página web
@@ -37,7 +42,8 @@ Por lo que, para poder usar la aplicación, se tienen que seguir los siguientes 
  ![image](https://user-images.githubusercontent.com/91559952/231840952-08e19602-9201-413b-819c-3fb321e34739.png)
 
 11.	Cuando la búsqueda se ha realizado, ya sale la información mencionada en el punto 7 sobre el vuelo. En el siguiente ejemplo visual que hemos probado se opta por Origen: Málaga, Destino: Barcelona y fecha: 18/04/2023. Y esto sería lo perceptible por el usuario si todos los pasos anteriores han sido efectivos: 
-![image](https://user-images.githubusercontent.com/91559952/231840994-210c0c3c-0a77-4158-ab8b-e1201d896a00.png)
+![lab isis](https://user-images.githubusercontent.com/91559952/234650490-03d7c163-61c2-4b1c-8977-2342056dba78.jpg)
+*Los resultados expresados en minutos son de una API y los que están en horas de la otra. 
 
 ### Guía DOCKER
 Para el despliegue del servicio usando Docker será necesario seguir los siguientes pasos:
