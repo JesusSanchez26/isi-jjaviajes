@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JJA VIAJES</title>
+
+</head>
+
+<body>
+    <style>
+        #table-container {
+            margin: 0 auto;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 130px;
+            background-color: bisque;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 0 auto;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+
+
+    <header style="display: flex; align-items: center; justify-content: space-between;">
+        <img src="https://img.freepik.com/vector-gratis/logotipo-viaje-detallado_23-2148616611.jpg?w=2000" alt="Logo" style="height: 120px; width: 110px; margin-right: 20px;">
+        <h1 style="font-size: 32px; text-align: center;flex-grow: 1; background-color: #333; color: #fff; padding: 20px; margin: 0;">
+            JJA VIAJES</h1>
+    </header>
+    <style>
+        body {
+            background-image: url('https://cdn.pixabay.com/photo/2018/08/19/10/16/nature-3616194_1280.jpg');
+            background-size: cover;
+        }
+    </style>
+
+    <body onload="getAirports()">
+        <section class="banner">
+            <h1 style="text-align: center;">"DESCUBRE NUEVOS DESTINOS Y HAZ TUS VIAJES"</h1>
+            <h3 style="text-align: center;">Encuentra los mejores precios y las mejores formas de viajar.</h3>
+            <br>
+            <br>
+            <form>
+                <div style=" margin: 0 auto;">
+                    <label for="origen" style="margin-left: 40px;font-size: 30px; background-color: rgb(85, 85, 85); color: white;">ORIGEN:</label>
+                    <select style="width: 134px; margin-left: 10px; font-size: 30px;" id="mi-selector1"></select>
+                    <label for="destino" style="margin-left: 40px;font-size: 30px; background-color: rgb(85, 85, 85); color: white; ">DESTINO:</label>
+                    <select style="width: 134px; margin-left: 10px; font-size: 30px;" id="mi-selector2"></select>
+
+
+                    <label for="fecha" style="margin-left: 40px;font-size: 30px; background-color: rgb(85, 85, 85); color: white; ">FECHA:</label>
+                    <input type="date" id="fecha" name="fecha" style="margin-top: 30px;font-size: 30px; background-color: lightgray;">
+
+                    <button type="button" onclick="buscarViajes()" style="font-size: 50px; background-color: rgb(9, 153, 115); color: white;float: right;margin-right: 120px; margin-top: 20px;">Buscar</button>
+                </div>
+            </form>
+
+
+            <div id="table-container"></div>
+
+        </section>
+
+        <script>
+            const token = 'e233a2be10msh8840ddf18877db9p19b37fjsnadbb89126e34';
+            const token2 = '78c2f0279fmshaafe4fd8acccad7p14926cjsn5abd027f34b4';
+            let destinationReq = '';
+            let dateReq = '';
+            let origin = '';
+            let miSelector1 = document.getElementById("mi-selector1");
+            let miSelector2 = document.getElementById("mi-selector2");
+            let date = document.getElementById("fecha");
+
+            let airports = [];
+
+            // Agregar un evento change al elemento select
+            miSelector1.addEventListener("change", function() {
+                // Asignar el valor seleccionado a la variable
+                origin = miSelector1.value;
+            });
+
+            // Agregar un evento change al elemento select
+            miSelector2.addEventListener("change", function() {
+                // Asignar el valor seleccionado a la variable
+                destinationReq = miSelector2.value;
+            });
+
+
+            // Agregar un evento change al elemento select
+            date.addEventListener("change", function() {
+                // Asignar el valor seleccionado a la variable
+                dateReq = date.value;
+            });
+
+            async function getAirports() {
+                const petitionAirports = {
+                    method: 'GET',
+                    headers: {
+                        'X-RapidAPI-Key': token,
+                        'X-RapidAPI-Host': 'ryanair.p.rapidapi.com'
+                    }
+                };
+
+                fetch('https://ryanair.p.rapidapi.com/airports', petitionAirports)
+                    .then(response => response.json())
+                    .then(response => {
+                        console.log('aeropuertos ', response)
+                        airports.push(response);
+                        let opciones = [];
+                        for (var i = 0; i < response.length; i++) {
+
+                            // Crear un nuevo elemento option
+                            var option = document.createElement("option");
+
+                            // Asignar el valor y el texto de la opción
+
+                            // Valor que se selecciona realmente
+                            option.value = response[i].code;
+                            // label que aparece como texto en el selector
+                            option.text = response[i].name;
+
+                            // Agregar la opción al elemento select
+                            opciones.push(option);
+                        }
+
+                        // Agregar las opciones al elemento select 1
+                        for (var i = 0; i < opciones.length; i++) {
+                            miSelector1.appendChild(opciones[i].cloneNode(true));
+                        }
+
+                        // Agregar las opciones al elemento select 2
+                        for (var i = 0; i < opciones.length; i++) {
+                            miSelector2.appendChild(opciones[i].cloneNode(true));
+                        }
+
+
+                    })
+                    .catch(err => console.error(err));
+
+            }
+
+            async function buscarViajes() {
+                const table = document.createElement('table');
+                // crea la primera fila para las cabeceras
+                const headerRow = table.insertRow();
+                const headers = ['Origen', 'Destino', 'Número de vuelo', 'Tarifa regular', 'Moneda', 'Asientos disponibles', 'Fecha de salida', 'Fecha de llegada', 'Duración'];
+                headers.forEach(headerText => {
+                    const header = document.createElement('th');
+                    const textNode = document.createTextNode(headerText);
+                    header.appendChild(textNode);
+                    headerRow.appendChild(header);
+                });
+
+                const options = {
+                    method: 'GET',
+                    headers: {
+                        'X-RapidAPI-Key': token,
+                        'X-RapidAPI-Host': 'ryanair.p.rapidapi.com'
+                    }
+                };
+
+                fetch(`https://ryanair.p.rapidapi.com/flights?origin_code=${origin}&destination_code=${destinationReq}&origin_departure_date=${dateReq}&destination_departure_date=${dateReq}`, options)
+                    .then(response => response.json())
+                    .then(response => {
+                        console.log(response)
+                        response.destination_to_origin_trip.forEach(flightArray => {
+                            const flight = flightArray[0];
+                            const row = table.insertRow();
+                            const values = [flight.destination_code, flight.origin_code, flight.flight_number, flight.regular_fare, flight.currency, flight.regular_fares_left, flight.departure_datetime_utc, flight.arrival_datetime_utc, flight.duration_hours + ' h'];
+                            values.forEach(value => {
+                                const cell = document.createElement('td');
+                                const textNode = document.createTextNode(value);
+                                cell.appendChild(textNode);
+                                row.appendChild(cell);
+                            });
+                        });
+                    })
+                    .catch(err => console.error(err));
+
+                const url2 = `https://skyscanner44.p.rapidapi.com/search?adults=1&origin=${origin}&destination=${destinationReq}&departureDate=${dateReq}&currency=EUR`;
+                const options2 = {
+                    method: 'GET',
+                    headers: {
+                        'content-type': 'application/octet-stream',
+                        'X-RapidAPI-Key': '78c2f0279fmshaafe4fd8acccad7p14926cjsn5abd027f34b4',
+                        'X-RapidAPI-Host': 'skyscanner44.p.rapidapi.com'
+                    }
+                };
+
+                try {
+                    const response = await fetch(url2, options2);
+                    const result = await response.text();
+                    const flights = JSON.parse(result);
+                    flights.itineraries.buckets.forEach(element => {
+                        element.items.forEach(flight => {
+                            const row = table.insertRow();
+                            const values = [flight.legs[0].origin.id, flight.legs[0].destination.id, 'FR ' + flight.legs[0].segments[0].flightNumber, flight.price.raw, 'EUR', '2', flight.legs[0].segments[0].departure, flight.legs[0].segments[0].arrival, flight.legs[0].segments[0].durationInMinutes + ' m'];
+                            values.forEach(value => {
+                                const cell = document.createElement('td');
+                                const textNode = document.createTextNode(value);
+                                cell.appendChild(textNode);
+                                row.appendChild(cell);
+                            });
+                        });
+                    });
+                } catch (error) {
+                    console.error('Error segunda busqueda --> ', error);
+                }
+
+                // añade la tabla al DOM
+                const tableContainer = document.getElementById('table-container');
+                tableContainer.appendChild(table);
+            }
+        </script>
+    </body>
+
+</html>
