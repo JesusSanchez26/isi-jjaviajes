@@ -22,8 +22,10 @@ Por lo que, para poder usar la aplicación, se tienen que seguir los siguientes 
 [En el caso de que no se pueda ejecutar podría ser por no tener Flask implementado, en ese caso como paso previo tendría que introducirse en la terminal: pip install Flask]
 5.	Una vez que la ejecución esté lista, se abre el navegador del respectivo ordenador personal y se pone la siguiente dirección de acceso: https://localhost:5000 o bien https://127.0.0.1:5000 (el puerto 5000 al haber utilizado “Flask”).
 6.	En este punto la página web tiene que visualizarse. 
-7.	Cuando el usuario ya esté dentro de la aplicación web, tendrá diferentes casillas para rellenar: destino, origen y fecha; y un botón para Buscar que te da los diferentes vuelos con la siguiente información: origen, destino, número de vuelo, tarifa regular, moneda, asientos disponibles, fecha de salida y de llegada y la duración del vuelo. 
-8.	Una vez que pinches dentro de la respectiva casilla de destino y origen, habrá un desplegable con los diferentes lugares de los que se puede viajar, como se muestra en las siguientes capturas: 
+7.	Primero aparecerá una página para que el usuario haga el login correctamente y así acceder a la página principal de nuestra aplicación web para poder buscar el viaje. 
+![image](https://user-images.githubusercontent.com/91602556/234912650-91c31a63-7272-46f0-bbe3-0b5ff44feef8.png)
+8.	Cuando el usuario ya esté dentro de la aplicación web, tendrá diferentes casillas para rellenar: destino, origen y fecha; y un botón para Buscar que te da los diferentes vuelos con la siguiente información: origen, destino, número de vuelo, tarifa regular, moneda, asientos disponibles, fecha de salida y de llegada y la duración del vuelo. 
+9.	Una vez que pinches dentro de la respectiva casilla de destino y origen, habrá un desplegable con los diferentes lugares de los que se puede viajar, como se muestra en las siguientes capturas: 
  ![image](https://user-images.githubusercontent.com/91559952/231840861-92bde736-d637-4eec-bd82-8313026800e5.png)
 
 9.	Cuando ya se haya seleccionado el origen y el destino, habrá que seleccionar la fecha del vuelo, en donde se despliega un calendario para que sea más rápido seleccionarla y cómodo para el usuario, como aparece en la siguiente captura: 
@@ -57,3 +59,12 @@ Para el despliegue del servicio usando Docker será necesario seguir los siguien
     • sudo docker build -f Dockerfile -t sprint4:latest . 
     
     • sudo docker run -p 2001:5000 -i sprint4
+    
+##Otros comandos interesantes
+
+#Para comprobar que tenemos instalado Docker ejecutar el comando:
+• sudo docker info
+#Para comprobar que se ha generado el contenedor ejecutar el comando:
+• sudo docker image ls
+#Para descargar el contenedor generado ejecutar el comando:
+• sudo docker save sprint4 > contenedor.tar
