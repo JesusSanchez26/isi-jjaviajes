@@ -63,8 +63,13 @@ Para el despliegue del servicio usando Docker será necesario seguir los siguien
 #### Otros comandos interesantes
 
 Para comprobar que tenemos instalado Docker ejecutar el comando:
+
 • sudo docker info
+
 Para comprobar que se ha generado el contenedor ejecutar el comando:
+
 • sudo docker image ls
+
 Para descargar el contenedor generado ejecutar el comando:
+
 • sudo docker save sprint4 > contenedor.tar
